@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DarkMode</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./darkMode.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .main-container {
+        min-height: 100vh;
+        width: 100%;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px;
+      }
+
+      .page-title {
+        color: #131313;
+        margin-bottom: 20px;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.157);
+      }
+
+      /*########## Dark mode styling ############*/
+
+      .dark .main-container {
+        background-color: #131313;
+        color: #f2f2f2;
+      }
+
+      .dark .page-title {
+        color: #f2f2f2;
+      }
+
+      .dark .content-wrapper {
+        background-color: #d2d0d0;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.157);
+        color: #131313;
+      }
+
+      .main-container .display-none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="page-title">Lorem, ipsum dolor.</h1>
+      <section class="content-wrapper">
+        <p class="paragraph-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+          similique!
+        </p>
+        <button class="toggle-mode-btn">Dark/Light</button>
+      </section>
+    </main>
+    <script>
+      document
+        .querySelector(".toggle-mode-btn")
+        .addEventListener("click", () => {
+        //   document
+        //     .querySelector(".paragraph-text")
+        //     .classList.toggle("display-none");
+        document.querySelector(".main-container").classList.toggle("dark");
+        });
+    </script>
+  </body>
+</html>
